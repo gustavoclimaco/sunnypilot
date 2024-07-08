@@ -163,4 +163,19 @@ FW_VERSIONS = {
       b'PJ6T-14H102-ABJ\x00\x00\x00\x00\x00\x00\x00\x00\x00',
     ],
   },
+  CAR.FORD_FUSION_RT: {
+    (Ecu.eps, 0x730, None): [
+      b'K2GC-14D003-AJ\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', #STRATEGY_FUSION_HYBRID_AWD2017_PSCM
+    ],
+    (Ecu.abs, 0x760, None): [
+      b'HG9C-2D053-AH\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', #STRATEGY_FUSION_HYBRID_ABS
+      b'HG9C-2D053-MG\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', #STRATEGY_FUSION_AWD2017_ABS
+    ],
+    (Ecu.fwdRadar, 0x764, None): [
+      b'LB5T-14D049-AB\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',#STRATEGY_FUSION_HYBRID_AWD2017_RADAR
+    ],
+    (Ecu.fwdCamera, 0x706, None): [
+      b'KT4T-14F397-AE\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00', #STRATEGY_FUSION_HYBRID_AWD2017_CAMERA
+    ],
+  },
 }
