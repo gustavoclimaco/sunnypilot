@@ -49,7 +49,6 @@ class CarState(CarStateBase):
     # steering wheel
     ##ret.steeringAngleDeg = cp.vl["SteeringPinion_Data"]["StePinComp_An_Est"]
     ret.steeringAngleDeg = cp.vl["ParkAid_Data"]["ExtSteeringAngleReq2"]
-
     ret.steeringTorque = cp.vl["EPAS_INFO"]["SteeringColumnTorque"]
     ret.steeringPressed = self.update_steering_pressed(abs(ret.steeringTorque) > CarControllerParams.STEER_DRIVER_ALLOWANCE, 5)
     ret.steerFaultTemporary = cp.vl["EPAS_INFO"]["EPAS_Failure"] == 1
@@ -143,15 +142,15 @@ class CarState(CarStateBase):
         ("INSTRUMENT_PANEL", 1),
       ]
 
-    if CP.transmissionType == TransmissionType.automatic:
-      messages += [
-        ("PowertrainData_10", 10),
-      ]
-    elif CP.transmissionType == TransmissionType.manual:
-      messages += [
-        ("Engine_Clutch_Data", 33),
-        ("BCM_Lamp_Stat_FD1", 1),
-      ]
+    #if CP.transmissionType == TransmissionType.automatic:
+    #  messages += [
+    #   ("PowertrainData_10", 10),
+    # ]
+    #elif CP.transmissionType == TransmissionType.manual:
+    #  messages += [
+    #    ("Engine_Clutch_Data", 33),
+    #    ("BCM_Lamp_Stat_FD1", 1),
+    #  ]
 
     if CP.enableBsm and not (CP.flags & FordFlags.CANFD):
       messages += [
