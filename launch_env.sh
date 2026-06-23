@@ -20,3 +20,5 @@ if [ -z "$AGNOS_VERSION" ]; then
 fi
 
 export STAGING_ROOT="/data/safe_staging"
+export SKIP_FW_QUERY=1
+export FINGERPRINT=GWM_HAVAL_H6
